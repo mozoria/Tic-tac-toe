@@ -11,24 +11,39 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h1>Ideally a board???</h1>
-        <table id="box">
-          <tr class="squares">
-            <td id="1"></td>
-            <td id="2"></td>
-            <td id="3"></td>
-          </tr>
-          <tr class="squares">
-            <td id="4"></td>
-            <td id="5"></td>
-            <td id="6"></td>
-          </tr>
-          <tr class="squares">
-            <td id="7"></td>
-            <td id="8"></td>
-            <td id="9"></td>
-          </tr>
-        </table>
+    <h1>Tic Tac Toe</h1>
+      <div id="message"></div>
+  <section class="before-auth">
+      <h2>Sign Up</h2>
+      <form id="sign-up">
+        <input type="email" name="credentials[email]" placeholder="email">
+        <input type="password" name="credentials[password]" placeholder="password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="password confirmation">
+        <button class="btn btn-danger">Submit</button>
+      </form>
+      <h2>Sign In</h2>
+      <form id="sign-in">
+        <input type="email" name="credentials[email]" placeholder="email">
+        <input type="password" name="credentials[password]" placeholder="password">
+        <button class="btn btn-danger">Submit</button>
+      </form>
+    </section>
+    <section class="after-auth">
+    <h2>Change Password</h2>
+      <form id="change-password">
+        <input type="text" name="passwords[old]" placeholder="old password">
+        <input type="text" name="passwords[new]" placeholder="new password">
+        <button class="btn btn-danger">Submit</button>
+      </form>
+    <h2>Sign Out</h2>
+      <form id="sign-out">
+        <button class="btn btn-danger">Submit</button>
+      </form>
+      <h2>Create Example</h2>
+        <form id="example-create">
+          <input type="text" name="example[text]" placeholder="enter some text">
+          <input type="submit" value="Create Example">
+        </form>
+    </section>
     </body>
 </html>

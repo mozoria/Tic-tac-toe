@@ -1,1 +1,48 @@
 @import '~bootstrap/scss/bootstrap';
+
+$black: #000;
+
+body {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%,
+  rgba(9,9,121,1) 35%,
+  rgba(0,212,255,1) 100%);
+  color: white;
+  font-family: fantasy;
+  text-align: center;
+
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+input {
+  margin-bottom:  20px;
+}
+
+.border {
+  border: 3px solid $black;
+  margin: 20px;
+  padding: 20px;
+}
+
+.success {
+  background-color: green;
+  color: white;
+  font-size: 2em;
+}
+
+.failure {
+  background-color: red;
+  color: white;
+  font-size: 2em;
+}
+
+.after-auth {
+  display: none;
+}
