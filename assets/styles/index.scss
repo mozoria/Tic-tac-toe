@@ -27,8 +27,15 @@ input {
 
 .border {
   border: 3px solid $black;
-  margin: 20px;
-  padding: 20px;
+  //margin: 20px;
+  //padding: 20px;
+}
+
+.col-4 {
+  border: 4px solid $black;
+  font-size: 20px;
+  margin: auto;
+  padding: 40px;
 }
 
 .success {

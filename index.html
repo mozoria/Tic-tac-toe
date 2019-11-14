@@ -11,6 +11,7 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+  <body>
     <h1>Tic Tac Toe</h1>
       <div id="message"></div>
   <section class="before-auth">
@@ -39,11 +40,23 @@
       <form id="sign-out">
         <button class="btn btn-danger">Submit</button>
       </form>
-      <h2>Create Example</h2>
-        <form id="example-create">
-          <input type="text" name="example[text]" placeholder="enter some text">
-          <input type="submit" value="Create Example">
-        </form>
-    </section>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4" data-id="0"> 0 </div>
+        <div class="col-4" data-id="1"> 1 </div>
+        <div class="col-4" data-id="2"> 2 </div>
+      </div>
+      <div class="row">
+        <div class="col-4" data-id="3"> 3 </div>
+        <div class="col-4" data-id="4"> 4 </div>
+        <div class="col-4" data-id="5"> 5 </div>
+      </div>
+      <div class="row">
+        <div class="col-4" data-id="6"> 6 </div>
+        <div class="col-4" data-id="7"> 7 </div>
+        <div class="col-4" data-id="8"> 8 </div>
+      </div>
+    </div>
+  </section>
     </body>
 </html>
