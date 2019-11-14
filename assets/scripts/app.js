@@ -8,4 +8,16 @@ const authEvents = require('./auth/events')
 
 $(() => {
   authEvents.addHandlers()
+  $('.col-4').on('click', addX)
 })
+
+const addX = event => {
+  $(event.target).text('x')
+  $('.col-4').on('click', addO)
+}
+const addO = event => {
+  $(event.target).text('O')
+  $('.col-4').on('click', addX)
+    if (addX || add0 === true)
+
+}
