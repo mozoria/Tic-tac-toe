@@ -51,14 +51,10 @@ const createGame = formData => {
     data: formData
   })
 }
-const clickSpace = event => {
-  event.preventDefault()
-}
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  createGame,
-  clickSpace
+  createGame
 }
