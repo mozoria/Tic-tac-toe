@@ -5,8 +5,8 @@ $black: #000;
 body {
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%,
-  rgba(9,9,121,1) 35%,
-  rgba(0,212,255,1) 100%);
+   rgba(9, 9, 121, 1) 35%,
+   rgba(0, 212, 255, 1) 100%);
   color: white;
   font-family: fantasy;
   text-align: center;
@@ -27,8 +27,8 @@ input {
 
 .border {
   border: 3px solid $black;
-  //margin: 20px;
-  //padding: 20px;
+  margin: 20px;
+  padding: 20px;
 }
 
 .col-4 {
@@ -37,7 +37,7 @@ input {
   font-size: 20px;
   margin: auto;
   padding: 40px;
-}
+ }
 
 .success {
   background-color: green;

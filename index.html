@@ -14,7 +14,7 @@
   <body>
     <h1>Tic Tac Toe</h1>
       <div id="message"></div>
-  <section class="">
+  <section class="before-auth">
       <h2>Sign Up</h2>
       <form id="sign-up">
         <input type="email" name="credentials[email]" placeholder="email">
@@ -29,7 +29,7 @@
         <button class="btn btn-danger">Submit</button>
       </form>
     </section>
-    <section class="">
+    <section class="after-auth">
     <h2>Change Password</h2>
       <form id="change-password">
         <input type="text" name="passwords[old]" placeholder="old password">
@@ -40,21 +40,26 @@
       <form id="sign-out">
         <button class="btn btn-danger">Submit</button>
       </form>
+      <h2>Create A Game</h2>
+        <form id="create-game">
+          <button class="btn btn-danger">Create</button>
+        </form>
+      <h3>Current Player </h3>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-4" id="b0">  </div>
-        <div class="col-4" id="b1">  </div>
-        <div class="col-4" id="b2">  </div>
+        <div class="col-4" id="b0"></div>
+        <div class="col-4" id="b1"></div>
+        <div class="col-4" id="b2"></div>
       </div>
       <div class="row">
-        <div class="col-4" id="b3">  </div>
-        <div class="col-4" id="b4">  </div>
-        <div class="col-4" id="b5">  </div>
+        <div class="col-4" id="b3"></div>
+        <div class="col-4" id="b4"></div>
+        <div class="col-4" id="b5"></div>
       </div>
       <div class="row">
-        <div class="col-4" id="b6">  </div>
-        <div class="col-4" id="b7">  </div>
-        <div class="col-4" id="b8">  </div>
+        <div class="col-4" id="b6"></div>
+        <div class="col-4" id="b7"></div>
+        <div class="col-4" id="b8"></div>
       </div>
     </div>
   </section>

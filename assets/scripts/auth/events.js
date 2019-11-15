@@ -25,7 +25,6 @@ const onSignIn = function (event) {
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
 }
-
 const onChangePassword = event => {
   event.preventDefault()
 
@@ -36,7 +35,6 @@ const onChangePassword = event => {
     .then(ui.onChangePasswordSuccess)
     .catch(ui.onChangePasswordFailure)
 }
-
 const onSignOut = function (event) {
   event.preventDefault()
 

@@ -57,10 +57,6 @@ const onSignOutFailure = () => {
   onFailure('Something went wrong, try again.')
 }
 
-const onStartGameSuccess = responseData => {
-  onSuccess('play')
-}
-
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -69,6 +65,5 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutSuccess,
-  onSignOutFailure,
-  onStartGameSuccess
+  onSignOutFailure
 }
