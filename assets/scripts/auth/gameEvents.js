@@ -13,18 +13,22 @@ $('#playerNow').text('x')
 const changePlayer = () => {
   if ((playerNow === 'x') && ($(event.target).html() === '')) {
     $(event.target).text('x')
-    $('#game-event').text('Player 0 - your  move')
   } else if ((playerNow === 'o') && ($(event.target).html() === '')) {
     $(event.target).text('o')
-    $('#game-event').text('Player X - your  move')
   } else {
     $().text('space already clicked')
     $('#game-event').text('space is already taken')
   }
-  if (playerNow === 'o') {
-    playerNow = 'x'
+  if ( gameWon()) {
+    // stop playing, tell player won
   } else {
-    playerNow = 'o'
+    // continue playing
+    if (playerNow === 'o') {
+      playerNow = 'x'
+    } else {
+      playerNow = 'o'
+    }
+    $('#game-event').text(` ${playerNow} - your  move`)
   }
 }
 
@@ -57,8 +61,25 @@ const tttWinPattern = {
   diag: [$('#b0', '#b4', '#b8')],
   diag2: [$('#b2', '#b4', '#b6')]
 }
-
 console.log(tttWinPattern)
+
+const gameWon = function () {
+  // debugger
+  if (((playerNow === $('#b0').text()) && (playerNow === $('#b1').text()) && (playerNow === $('#b2').text())) ||
+    ((playerNow === $('#b3').text()) && (playerNow === $('#b4').text()) && (playerNow === $('#b5').text())) ||
+    ((playerNow === $('#b6').text()) && (playerNow === $('#b7').text()) && (playerNow === $('#b8').text())) ||
+    ((playerNow === $('#b0').text()) && (playerNow === $('#b3').text()) && (playerNow === $('#b6').text())) ||
+    ((playerNow === $('#b1').text()) && (playerNow === $('#b4').text()) && (playerNow === $('#b7').text())) ||
+    ((playerNow === $('#b2').text()) && (playerNow === $('#b5').text()) && (playerNow === $('#b8').text())) ||
+    ((playerNow === $('#b0').text()) && (playerNow === $('#b4').text()) && (playerNow === $('#b8').text())) ||
+    ((playerNow === $('#b2').text()) && (playerNow === $('#b4').text()) && (playerNow === $('#b6').text()))) {
+    $('#game-event').text('Player ' + playerNow + ' - you  won')
+    console.log('player won', playerNow)
+    return true
+  }
+  console.log('continue playing')
+  return false
+}
 
 module.exports = {
   addHandlers
