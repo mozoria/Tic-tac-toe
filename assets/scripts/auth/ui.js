@@ -62,7 +62,7 @@ const onCreateGameSuccess = () => {
 }
 
 const onCreateGameFailure = () => {
-  onSuccess('Something went wrong, try again.')
+  onFailure('Something went wrong, try again.')
 }
 
 module.exports = {

@@ -2,15 +2,15 @@
 // const store = require('../store')
 const api = require('./api')
 const ui = require('./ui')
+let gameBoard = ['', '', '', '', '', '', '', '', '']
 
 const addHandlers = event => {
-  $('.col-4').on('click', changePlayer)
   $('#create-game').on('click', onCreateGame)
 }
 let playerNow = 'x'
 $('#playerNow').text('x')
 
-const changePlayer = () => {
+const changePlayer = (event) => {
   if ((playerNow === 'x') && ($(event.target).html() === '')) {
     $(event.target).text('x')
   } else if ((playerNow === 'o') && ($(event.target).html() === '')) {
@@ -19,8 +19,22 @@ const changePlayer = () => {
     $().text('space already clicked')
     $('#game-event').text('space is already taken')
   }
-  if ( gameWon()) {
+
+  // keep track of where an x or o is placed on board
+  // using ID put an x or o into the gameBoard
+  // using event.target get access to the index
+  // using the index put an x or an o into the gameBoard array
+  // make sure index is saved, to be able to send to server for udpate
+  $(event.target).index('#id')
+  for (let i = 0; i <= gameBoard.length; i++) {
+    if (gameBoard.length === 9) { return gameBoard[0] }
+  store.index
+
+  if (gameWon()) {
     // stop playing, tell player won
+    $('.col-4').off('click', changePlayer)
+  } else if (gameTied()) {
+
   } else {
     // continue playing
     if (playerNow === 'o') {
@@ -35,21 +49,12 @@ const changePlayer = () => {
 const onCreateGame = function (event) {
   event.preventDefault()
   $('.col-4').text('')
+  $('.col-4').on('click', changePlayer)
+  gameBoard = ['', '', '', '', '', '', '', '', '']
   api.createGame()
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
 }
-
-// const cantPlay = () => {
-//   for (let i = 0; i <= gameBoard.length; i++) {
-//     if (gameBoard.length === 9) { return gameBoard[0] }
-//     console.log(cantPlay)
-//   }
-// }
-
-// const gameBoard = ['', '', '', '', '', '', '', '', '']
-// const playerOne = 'x'
-// const playerTwo = 'o'
 
 const tttWinPattern = {
   row1: [$('#b0', '#b1', '#b2')],
@@ -77,6 +82,19 @@ const gameWon = function () {
     console.log('player won', playerNow)
     return true
   }
+}
+// game tied if all the spaces are filled
+// if playerNow does equal gameWon or did not win return true
+const gameTied = function () {
+   // game tied if all the spaces are filled
+   // if playerNow does equal gameWon or did not win return true
+   debugger
+  for (let i = 0; i <= gameBoard.length; i++) {
+  if (gameBoard.length === 9) { return gameBoard[0] }
+    $('.col-4').off('click', changePlayer)
+    return true
+  }
+
   console.log('continue playing')
   return false
 }
