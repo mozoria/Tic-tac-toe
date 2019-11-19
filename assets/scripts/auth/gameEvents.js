@@ -19,11 +19,7 @@ const changePlayer = (event) => {
     $().text('space already clicked')
     $('#game-event').text('space is already taken')
   }
-  // keep track of where an x or o is placed on board
-  // using ID put an x or o into the gameBoard
-  // using event.target get access to the index
-  // using the index put an x or an o into the gameBoard array
-  // make sure index is saved, to be able to send to server for udpate
+
   if (gameWon()) {
     // stop playing, tell player won
     $('.col-4').off('click', changePlayer)
@@ -39,6 +35,7 @@ const changePlayer = (event) => {
     $('#game-event').text(` ${playerNow} - your  move`)
   }
 }
+
 const onCreateGame = function (event) {
   event.preventDefault()
   $('.col-4').text('')
@@ -62,7 +59,6 @@ const tttWinPattern = {
 console.log(tttWinPattern)
 
 const gameWon = function () {
-  // debugger
   if (((playerNow === $('#b0').text()) && (playerNow === $('#b1').text()) && (playerNow === $('#b2').text())) ||
     ((playerNow === $('#b3').text()) && (playerNow === $('#b4').text()) && (playerNow === $('#b5').text())) ||
     ((playerNow === $('#b6').text()) && (playerNow === $('#b7').text()) && (playerNow === $('#b8').text())) ||
@@ -75,10 +71,9 @@ const gameWon = function () {
     console.log('player won', playerNow)
     return true
   }
-
-  console.log('continue playing')
   return false
 }
+
 const checkTie = () => {
   const arrId = ['#b0', '#b1', '#b2', '#b3', '#b4', '#b5', '#b6', '#b7', '#b8']
   // create an array with the values of the board
@@ -87,6 +82,7 @@ const checkTie = () => {
   })
   return boardText.includes('')
 }
+
 module.exports = {
   addHandlers
 }
