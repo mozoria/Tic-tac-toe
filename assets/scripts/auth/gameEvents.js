@@ -19,22 +19,16 @@ const changePlayer = (event) => {
     $().text('space already clicked')
     $('#game-event').text('space is already taken')
   }
-
   // keep track of where an x or o is placed on board
   // using ID put an x or o into the gameBoard
   // using event.target get access to the index
   // using the index put an x or an o into the gameBoard array
   // make sure index is saved, to be able to send to server for udpate
-  $(event.target).index('#id')
-  for (let i = 0; i <= gameBoard.length; i++) {
-    if (gameBoard.length === 9) { return gameBoard[0] }
-  store.index
-
   if (gameWon()) {
     // stop playing, tell player won
     $('.col-4').off('click', changePlayer)
-  } else if (gameTied()) {
-
+  } else if (!checkTie()) {
+    $('#game-event').text('You tied.')
   } else {
     // continue playing
     if (playerNow === 'o') {
@@ -45,7 +39,6 @@ const changePlayer = (event) => {
     $('#game-event').text(` ${playerNow} - your  move`)
   }
 }
-
 const onCreateGame = function (event) {
   event.preventDefault()
   $('.col-4').text('')
@@ -82,23 +75,18 @@ const gameWon = function () {
     console.log('player won', playerNow)
     return true
   }
-}
-// game tied if all the spaces are filled
-// if playerNow does equal gameWon or did not win return true
-const gameTied = function () {
-   // game tied if all the spaces are filled
-   // if playerNow does equal gameWon or did not win return true
-   debugger
-  for (let i = 0; i <= gameBoard.length; i++) {
-  if (gameBoard.length === 9) { return gameBoard[0] }
-    $('.col-4').off('click', changePlayer)
-    return true
-  }
 
   console.log('continue playing')
   return false
 }
-
+const checkTie = () => {
+  const arrId = ['#b0', '#b1', '#b2', '#b3', '#b4', '#b5', '#b6', '#b7', '#b8']
+  // create an array with the values of the board
+  const boardText = arrId.map(id => {
+    return $(id).text()
+  })
+  return boardText.includes('')
+}
 module.exports = {
   addHandlers
 }
