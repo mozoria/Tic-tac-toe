@@ -1,7 +1,7 @@
 'use strict'
 
 const authEvents = require('./auth/events')
-const gameEvents = require('./auth/gameEvents')
+const gameEvents = require('./game/events')
 
 $(() => {
   authEvents.addHandlers()

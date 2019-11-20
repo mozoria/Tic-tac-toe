@@ -28,7 +28,6 @@ const onSignUpFailure = () => {
 
 const onSignInSuccess = responseData => {
   store.user = responseData.user
-  console.log(store)
   onSuccess('You successfuly signed in!')
   $('.after-auth').show()
   $('.before-auth').hide()
@@ -57,9 +56,7 @@ const onSignOutFailure = () => {
   onFailure('Something went wrong, try again.')
 }
 
-const onCreateGameSuccess = () => {
-  onSuccess('game started')
-}
+
 
 const onCreateGameFailure = () => {
   onFailure('Something went wrong, try again.')
@@ -74,6 +71,5 @@ module.exports = {
   onChangePasswordFailure,
   onSignOutSuccess,
   onSignOutFailure,
-  onCreateGameSuccess,
   onCreateGameFailure
 }
