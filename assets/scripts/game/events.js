@@ -40,7 +40,7 @@ const onUpdateGame = event => {
 const winPattern = () => {
   if (count === 9) {
     gameOver = true
-    onEndGame('tie')
+    onEndGame('')
     return 'tie game'
   }
   // Array of winning indexes

@@ -56,8 +56,6 @@ const onSignOutFailure = () => {
   onFailure('Something went wrong, try again.')
 }
 
-
-
 const onCreateGameFailure = () => {
   onFailure('Something went wrong, try again.')
 }

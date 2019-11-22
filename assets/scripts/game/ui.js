@@ -2,7 +2,17 @@
 
 const store = require('../store')
 
+const onSuccess = message => {
+  $('#message')
+    .removeClass('failure')
+    .addClass('success')
+    .text(message)
+    .fadeOut(message)
+  $('form').trigger('reset')
+}
+
 const onCreateGameSuccess = (response) => {
+  onSuccess('New Game Created!')
   store.game = response.game
   $('.gameBoard').show()
   $('.col-4').text('')
