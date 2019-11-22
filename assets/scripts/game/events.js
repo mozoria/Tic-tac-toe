@@ -19,7 +19,6 @@ const onCreateGame = function (event) {
 
 const onUpdateGame = event => {
   if (count >= 5) {
-    winPattern()
   }
   if ($(event.target).text() || gameOver) {
     return // TODO UI message
@@ -34,6 +33,7 @@ const onUpdateGame = event => {
   } else {
     playerNow = 'x'
   }
+  winPattern()
   $('#game-event').text(` ${playerNow} - your  move`)
 }
 

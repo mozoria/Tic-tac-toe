@@ -13,6 +13,7 @@ const onSuccess = message => {
 
 const onCreateGameSuccess = (response) => {
   onSuccess('New Game Created!')
+  $('#game-event').text('New Game Created!')
   store.game = response.game
   $('.gameBoard').show()
   $('.col-4').text('')

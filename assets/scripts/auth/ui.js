@@ -50,6 +50,8 @@ const onSignOutSuccess = responseData => {
   store.user = {}
   $('.after-auth').hide()
   $('.before-auth').show()
+  $('.col-4').text('')
+  $('#game-event').text('')
 }
 
 const onSignOutFailure = () => {
