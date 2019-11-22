@@ -47,15 +47,13 @@ const endGame = () => {
 
 const getGames = () => {
   return $.ajax({
-    url: config.apiUrl + 'games',
-    method: 'POST',
+    url: config.apiUrl + 'games/',
+    method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`
-    },
-    data: ''
+    }
   })
 }
-
 module.exports = {
   createGame,
   updateGame,
