@@ -29,7 +29,12 @@ const onEndGameSuccess = winner => {
   }
 }
 
+const onGetGamesSuccess = (response) => {
+  onSuccess(store.games)
+}
+
 module.exports = {
   onCreateGameSuccess,
-  onEndGameSuccess
+  onEndGameSuccess,
+  onGetGamesSuccess
 }
