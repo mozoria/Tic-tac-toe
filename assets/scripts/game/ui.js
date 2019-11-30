@@ -30,7 +30,8 @@ const onEndGameSuccess = winner => {
 }
 
 const onGetGamesSuccess = (response) => {
-  onSuccess(store.games)
+  onSuccess('Game Stats!')
+  $('#games-played').text(` Games Played ${response.games.length}`)
 }
 
 module.exports = {

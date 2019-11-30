@@ -77,9 +77,17 @@ const resetGameBoard = () => {
   count = 0
 }
 
+const onGetGames = () => {
+  event.preventDefault()
+  console.log('clicked')
+  gameApi.getGames()
+    .then(ui.onGetGamesSuccess)
+}
+
 const addHandlers = event => {
   $('#create-game').on('click', onCreateGame)
   $('.col-4').on('click', onUpdateGame)
+  $('#games-played').on('click', onGetGames)
 }
 
 module.exports = {
