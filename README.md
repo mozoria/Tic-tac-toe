@@ -7,3 +7,7 @@ For problems that I could not solve I would first go to google and research diff
 If that still didnt help then I went to the issue queue, which I shouldve used more often a lot of times.
 
 Unsolved problems, would be i am not to happy with the set up of the project and where the buttons are placed and just how organized it is as a whole. I need to solve the games played to reset/refresh when clicked because the button leaves after it shows the game and if i sign out it still displays. Making the actual board look more like a typical tic tac toe board and not so rectangular.
+
+
+Wire Frame
+https://imgur.com/gallery/u109x2g
